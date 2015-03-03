@@ -1,0 +1,26 @@
+<div id="body">
+    <div id="content">
+
+       <?php  $i=0; foreach ($unSeenComments as $comment) {  ?>
+         <!-- yazi başlangıcı -->        
+                  <div class="post">
+                    <div class="l">
+                       <p><strong><?php
+                       $this->load->helper('date'); 
+                       $datestring = "%d.%m.%Y"; 
+                       echo mdate($datestring, $comment->date); ?></strong></p>
+                       <p><strong>Başlık: </strong> <?php echo $comment->title; ?></p>
+                       <p><strong>Yazan: </strong> <?php echo $comment->writerName; ?></p>
+                       <p><strong>Yazan e-mail: </strong> <?php echo $comment->writerEmail; ?></p>  
+                    </div>
+                    <div class="r">
+                      <div align="right"> 
+                        <a href="/index.php/admin/deleteComment/<?php echo $comment->commentID; ?>">sil</a><br>  
+                        <a href="/index.php/admin/commentSetVisible/<?php echo $comment->commentID; ?>">Onayla</a>
+                      </div>
+                      <h4><p><?php echo $comment->comment; ?></p></h4>                      
+                    </div>
+                  </div>
+          <!-- yazı sonu -->
+        <?php   }  ?>
+    </div>

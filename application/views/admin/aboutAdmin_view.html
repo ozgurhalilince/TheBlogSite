@@ -1,0 +1,13 @@
+<div id="body">
+    <div id="content"> 
+        <?php foreach ($about as $a) {  ?>
+          <div class="post">
+            <h2>Hakkında</h2>
+            <form action="/index.php/admin/updateAbout" method="POST">
+            <textarea rows="27" cols="70" name="aboutContent"> <?php echo $a->about; ?></textarea><br>
+            	<div align="right"><input type="submit" value="Güncelle"></div> 
+         	</form>
+           </div>
+       <?php   }  ?>    
+    </div>
+ 

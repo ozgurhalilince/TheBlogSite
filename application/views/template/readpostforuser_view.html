@@ -1,0 +1,72 @@
+
+  <div id="body">
+    <div id="content">
+       <!-- yazi başlangıcı --> 
+       <div class="post">
+        <div class="l">
+                      <p><strong><?php
+                       $this->load->helper('date'); 
+                       $datestring = "%d.%m.%Y"; 
+                       echo mdate($datestring, $date); ?></strong></p>
+                       <p><strong>Category: </strong> <?php echo $categoryOfPost; ?></p>
+                      <h2></h2>         
+                    </div>
+                    <div class="r">
+                      <h2><?php echo $title; ?></h2>
+                      <p><?php echo $postContent; ?></p>                      
+                    </div>
+                  </div>
+                  <div class="break"></div><br><br>
+      <div id="comments">
+        <div class="box" id="respond">
+          <div class="buffer">
+
+          <?php if (!empty($comments[0])) {  //hiç yorum yoksa  ?> 
+            <center><h1>Yorumlar</h1></center>
+           <ol>
+              <li>
+                <ul>
+                  <?php foreach ($comments as $c) {   
+                    if ($c->visibility ==0)
+                     {
+                      continue;
+                    }?>
+                  
+                  <div class="required">
+                 <div class="notfound">                   
+                <div class="commentdate"><?php echo mdate($datestring, $c->date); ?></div>
+                <div class="commentauthor"><?php echo $c->writerName; ?> demiş ki;</div>
+                <div class="comment-meta"> <?php echo $c->comment; ?> </div> 
+                </div>
+                </div>
+                  
+                  <?php  } ?>
+                </ul>
+              </li>
+            </ol>
+            <?php } 
+            else echo "<p>**Bu yazı hakkında yorum yapılmamış.</p>"; ?>
+            <br><br>
+            <form action="/index.php/pages/addCommentForPost" method="post" id="commentform">
+              <p>
+                <input type="text" name="name" id="author" value="" size="22" tabindex="1"/>
+                <label for="author"><small>İsim (gerekli)</small></label>
+              </p>
+              <p>
+                <input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+                <label for="email"><small>Mail (gerekli)</small></label>
+              </p>
+              <p>
+                <textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea>
+              </p>
+              <input type="hidden" name="postID" value="<?php echo $postID; ?>">
+              <input type="hidden" name="categoryOfPost" value="<?php echo $categoryOfPost; ?>">
+              <p>
+                <button type="submit" id="submit">Yorum Gönder</button>
+              </p>
+              <p>Yorumunuz gönderildikten sonra adminin onayı için bekleyecektir.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

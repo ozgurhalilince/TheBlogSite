@@ -1,0 +1,24 @@
+  <div id="body">
+    <div id="content">
+    	<ul>
+       <?php foreach ($categories as $c) {   if ($c->categoryID == 0) continue;     ?>      
+                  <div class="post">
+                    <div class="l">
+                       <p><strong><a href="/index.php/admin/deleteCategory/<?php echo $c->categoryID; ?>">sil</a></strong></p>
+                      <h2></h2>         
+                    </div>
+                    <div class="r">
+                      <h3><a href="/index.php/admin/postsInCategoryAdmin/<?php echo $c->categoryID; ?>"><li><?php echo $c->categoryName; ?></li></a></h3>
+                    </div>
+                  </div>
+        <?php   }  ?>
+   		</ul>
+   		<div class="post">
+   			<div class="r">
+   				<form method="POST" action="/index.php/admin/addCategory">
+   				<input type="text" name="categoryName" alt="Yeni Kategori Ekle">
+   				<input type="submit" value="Ekle">
+   				</form>
+   			</div>
+   		</div>
+    </div>

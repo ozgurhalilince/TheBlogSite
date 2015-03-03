@@ -1,0 +1,22 @@
+  <div id="sidebar">
+      <div class="about"> <a href=""><img width="70" height="90" src="/application/views/template/css/images/about.jpg" alt="" /></a> 
+        <?php foreach ($about as $a) {  ?>
+        <p><strong>Özgür Halil İNCE</strong> <br><?php echo $a->about; ?></p>
+        <?php } ?>
+      </div>
+      <br><br><br><br>
+      <h2>Categories</h2>
+      <ul>
+        <?php foreach ($categories as $c) {  if ($c->categoryID == 0) continue; {
+          # code...
+        }?>
+          <li><a href="/index.php/pages/postsInCategory/<?php echo $c->categoryID; ?>"><?php echo $c->categoryName; ?></a></li>  
+        <?php } ?>
+      </ul>      
+    </div>
+    <div class="break"></div>
+  </div>
+  <div id="footer"></div>
+</div>
+</body>
+</html>

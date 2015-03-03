@@ -1,0 +1,32 @@
+<div id="body">
+    <div id="content">
+       <?php  $i=0; foreach ($posts as $post) {  
+       //$category = $categoryOfPosts[$i]->categoryName;   
+        foreach ($categoryOfPosts as $categoriess) {
+         if ($categoriess->postID == $post->postID) {
+            $category = $categoriess->categoryName;
+         }
+       } 
+       ?>
+         <!-- yazi başlangıcı -->        
+        <div class="post">
+          <div class="l">
+            <p><strong><?php
+            $this->load->helper('date'); 
+            $datestring = "%d.%m.%Y"; 
+            echo mdate($datestring, $post->date); ?></strong></p>
+            <p><strong>Category: </strong> <?php echo $category; $i++; ?></p>  
+          </div>
+          <div class="r">
+            <div align="right"> 
+              <a href="/index.php/admin/deletePost/<?php echo $post->postID; ?>">sil</a><br>  
+              <a href="/index.php/admin/updatePostView/<?php echo $post->postID; ?>">düzenle</a>
+            </div>
+            <h2><a href="/index.php/admin/readPostForAdmin/<?php echo $category . "/" .$post->postID; ?>"><?php echo $post->title; ?></a></h2>
+            <p><?php echo $post->postContent; ?></p>
+            <p class="details"> <a class="link1" href="/index.php/admin/readPostForAdmin/<?php echo $category . "/" .$post->postID; ?>"> Read More</a></p>                        
+          </div>
+        </div>
+          <!-- yazı sonu -->
+        <?php   }  ?>
+    </div>

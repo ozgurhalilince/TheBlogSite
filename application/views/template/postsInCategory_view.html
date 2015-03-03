@@ -1,0 +1,23 @@
+  <div id="body">
+      <div id="content">
+        <h1 align="center"> <?php $c = $category[0]->categoryName;  echo $c; ?> Kategorisindeki Yazılar</h1>
+       <?php foreach ($postsInCategory as $post) { ?>
+         <!-- yazi başlangıcı -->         
+                  <div class="post">
+                    <div class="l">
+                       <p><strong><?php
+                       $this->load->helper('date'); 
+                       $datestring = "%d.%m.%Y"; 
+                       echo mdate($datestring, $post->date); ?></strong></p>
+                       <p><strong>Category: </strong> <?php echo $c; ?></p>
+                      <h2></h2>         
+                    </div>
+                    <div class="r">
+                      <h2><a href="/index.php/pages/readPostForUser/<?php echo $c . "/" .$post->postID; ?>"><?php echo $post->title; ?></a></h2>
+                      <p><?php echo $post->postContent; ?></p>
+                      <p class="details"> <a class="link1" href="/index.php/pages/readPostForUser/<?php echo $c. "/" .$post->postID; ?>"> Read More</a>--></p>
+                    </div>
+                  </div>
+          <!-- yazı sonu -->
+        <?php   }  ?>
+    </div>

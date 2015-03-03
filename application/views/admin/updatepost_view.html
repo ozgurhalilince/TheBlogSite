@@ -1,0 +1,36 @@
+
+  <div id="body">
+    <!-- BEGIN content -->
+    <div id="content">
+      <div align="center">        
+        <center><h1>YAZI GÜNCELLE</h1></center><br>
+        <form action="/index.php/admin/updatePost" method="POST">
+          <table cellpadding="5" cellspasing="5">
+            <tr>
+              <td>Başlık:</td>
+              <td><div align="center"><input type="text" name="title" value="<?php echo $title; ?>"></div><br></td>
+            </tr>
+            <tr>
+              <td>Yazı İçeriği: </td>
+              <td><textarea rows="27" cols="70" name="content"><?php echo $content; ?></textarea><br></td>
+            </tr>     
+            <tr>
+              <td>Kategori:<br></td>
+              <td>
+              <?php foreach ($categories as $c) { ?>
+                <input type="radio" name="categoryID" value="<?php echo $c->categoryID; ?>" 
+                <?php if($c->categoryID==$categoryID) { ?> checked="true" <?php } ?>>
+                <b><?php echo $c->categoryName; ?></b><br>
+              <?php   } ?>
+              </td>                    
+            </tr>        
+            <tr>
+              <td></td>
+              <td><div align="right"><input type="submit" value="Güncelle"></div></td>
+            </tr>    
+             <input type="hidden" name="postID" value="<?php echo $postID; ?>"> 
+          </table>
+
+        </form>
+      </div>
+    </div>

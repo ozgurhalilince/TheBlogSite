@@ -1,0 +1,56 @@
+<div id="body">
+    <div id="content">
+       <!-- yazi başlangıcı --> 
+       
+                  <div class="post">
+                    <div class="l">
+                       <p><strong><?php
+                       $this->load->helper('date'); 
+                       $datestring = "%d.%m.%Y"; 
+                       echo mdate($datestring, $date); ?></strong></p>
+                       <p><strong>Category: </strong> <?php echo $categoryOfPost; ?></p>
+                      <h2></h2>         
+                    </div>
+                    <div class="r">
+                      <div align="right"> 
+                        <a href="/index.php/admin/deletePost?id=<?php echo $postID; ?>">sil</a><br>  
+                        <a href="/index.php/admin/updatePostView?id=<?php echo $postID; ?>">düzenle</a>
+                      </div>
+                      <h2><a href=""><?php echo $title; ?></a></h2>
+                      <p><?php echo $postContent; ?></p>
+                      
+                    </div>
+                  </div>
+<div class="break"></div><br><br>
+      <div id="comments">
+        <div class="box" id="respond">
+          <div class="buffer">
+
+            <center><h1>Yorumlar</h1></center>
+            <ol>
+              <li>
+                <ul>
+                  <?php foreach ($comments as $c) {   ?>
+                  <a href="/index.php/admin/deleteComment/<?php echo $c->commentID; ?>">Yorumu sil</a><br>
+                <?php if($c->visibility==0) {?>
+                <a href="/index.php/admin/commentSetVisible/<?php echo $c->commentID; ?>">Yorumu onayla</a> 
+              <?php }else { ?>
+                <a href="/index.php/admin/commentSetInvisible/<?php echo $c->commentID; ?>">Yorumu gizle</a> <?php } ?>
+                  <div class="required">
+                 <div class="notfound">                   
+                <div class="commentdate"><?php echo mdate($datestring, $c->date); ?></div>
+                <div class="commentauthor"><?php echo $c->writerName; ?> demiş ki;</div>
+                <div class="comment-meta"> <?php echo $c->comment; ?> </div> 
+                </div>
+                </div>
+                  
+                  <?php  } ?>
+                </ul>
+              </li>
+            </ol>
+    </div>
+     </div>
+        </div>
+
+        </div>
+ 
