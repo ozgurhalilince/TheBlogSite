@@ -16,5 +16,12 @@ Kullanıcılar yazıları okuyabilir, yazılara yorum atabilir. Fakat, yorumlar�
 * Admin kullanıcı adı ve şifresi en fazla 10, en düşük 4 karakterden oluşmalıdır. Kullanıcı adı ve şifresi sadece harf ve sayı içerebilir.
 * Admin için session kullanılmıştır. Bu yüzden admine ait sayfalara yalnızca admin girebilir.
 * Front-end kısmında hazır template kullanılmıştır.
-* Sitenin tasarımı için Photos For Promotion dosyasına bakınız.
 * Veritabanı için SQL Commands dosyasına bakınız. 
+
+---------------------------
+######Gui
+ 
+<hr align="center">
+<img src="https://github.com/ozgurince/TheBlogSite/blob/master/Photos%20For%20Promotion/adminHomapge.png" height="412" width="850">&nbsp;<br>
+<img src="https://github.com/ozgurince/TheBlogSite/blob/master/Photos%20For%20Promotion/userHomepage.png" height="412" width="850"><br>
+<hr>
