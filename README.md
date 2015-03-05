@@ -24,4 +24,6 @@ Kullanıcılar yazıları okuyabilir, yazılara yorum atabilir. Fakat, yorumlar�
 <hr align="center">
 <img src="https://github.com/ozgurince/TheBlogSite/blob/master/Photos%20For%20Promotion/adminHomapge.png" height="412" width="850">&nbsp;<br>
 <img src="https://github.com/ozgurince/TheBlogSite/blob/master/Photos%20For%20Promotion/userHomepage.png" height="412" width="850"><br>
+<img src"https://github.com/ozgurince/TheBlogSite/blob/master/Photos%20For%20Promotion/adminPostCommets.png" height="412" width="850"><br>
+<img src"https://github.com/ozgurince/TheBlogSite/blob/master/Photos%20For%20Promotion/postComments.png" height="412" width="850"><br>
 <hr>
